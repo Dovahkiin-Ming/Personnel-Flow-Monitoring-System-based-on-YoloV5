@@ -39,7 +39,7 @@ torch.cuda.is_available() #验证GPU是否已激活
 
 展示效果：
 
-![主界面]()
+![主界面](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/master/main.png)
 
 # 2. YOLOv5模型训练：
 
