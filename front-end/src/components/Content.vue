@@ -103,9 +103,10 @@
                 </div>
               </div>
             </el-card>
-            <div>
+            <!-- 试验了一下内嵌外部网站时钟 -->
+            <!-- <div>
               <iframe height="400" style="border-radius: 18px; width: 100%; margin-top: 25px;" src="https://tools.miku.ac/screen_clock/" frameborder="0" allowfullscreen></iframe>
-            </div>
+            </div> -->
           </div>
       </el-tabs>
 
