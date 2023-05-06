@@ -8,7 +8,7 @@
 ```shell
 nvidia-smi
 ```
-安装gpu版本pytorch，注意CUDA版本[Release Notes :: CUDA Toolkit Documentation (nvidia.com)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
+安装gpu版本[Pytorch](https://download.pytorch.org/whl/torch_stable.html)，注意CUDA版本[Release Notes :: CUDA Toolkit Documentation (nvidia.com)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
 首先是[各种版本的DUDA的下载链接](https://developer.nvidia.com/cuda-toolkit-archive)
 
@@ -22,8 +22,6 @@ nvcc -V
 ```shell
 conda install pytorch torchvision torchaudio pytorch-cuda=11.7 -c pytorch -c nvidia
 ```
-
-[Pytorch各版本下载](https://download.pytorch.org/whl/torch_stable.html)
 
 版本对应超级重要！！！目前都是cu117版本，可以使用conda list检查
 当前构建版本CUDA 11.7
