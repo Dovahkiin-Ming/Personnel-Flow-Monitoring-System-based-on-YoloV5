@@ -10,8 +10,7 @@ nvidia-smi
 ```
 安装gpu版本pytorch，注意CUDA版本[Release Notes :: CUDA Toolkit Documentation (nvidia.com)](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html)
 
-首先是各种版本的DUDA的下载链接  
-[CUDA Toolkit Archive | NVIDIA Developer](https://developer.nvidia.com/cuda-toolkit-archive)
+首先是[各种版本的DUDA的下载链接](https://developer.nvidia.com/cuda-toolkit-archive)
 
 查看CUDA是否安装：
 ```shell
@@ -61,7 +60,7 @@ python train.py --data coco.yaml --epochs 10 --weights yolov5m.pt --batch-size 8
 
 # 3. YOLOv5模型预测：
 
-【AIDetector_pytorch.py】
+【[AIDetector_pytorch.py](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/beta/back-end/processor/AIDetector_pytorch.py)】
 
 这里因为我只做人流量监测，所以做了筛选，删除即可正常检测80种类别
 ```python
@@ -103,7 +102,7 @@ def detect(self, im):
 
 # 4. Flask 部署：
 
-【app.py】
+【[app.py](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/beta/back-end/app.py)】
 
 路由示例
 ```python
@@ -125,7 +124,7 @@ def testdb():
 
 # 5. VUE前端：
 
-【Content.vue】
+【[Content.vue](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/beta/front-end/src/components/Content.vue)】
 
 摄像头模块
 ```javascript
