@@ -220,7 +220,7 @@
             </el-table>
           </el-tabs>
           <div>
-            <h3 style="float: left;">查看历史监测数据，仅供管理员使用</h3>
+            <h3 style="float: left;">查看历史监测数据，以JSON格式输出</h3>
             <el-button 
               style="border-radius: 8px;margin-left: 25px;margin-top: 15px;"
               type="primary"
@@ -253,8 +253,8 @@
 import axios from "axios";
 import { randomBytes } from "crypto";
 import JsonViewer from "vue-json-viewer";
-import CameraVue from './Camera.vue';
-
+/* import CameraVue from './Camera.vue';测试用，废弃
+ */
 export default {
   name: "Content",
   components: {
