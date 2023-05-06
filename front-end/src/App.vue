@@ -14,7 +14,7 @@
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Content from "./components/Content";
-import Camera from "./components/Camera";
+// import Camera from "./components/Camera"; //本模块仅作为网页摄像头技术验证【已废弃】
 export default {
   name: "专治近视眼",
   data() {

@@ -116,7 +116,8 @@ class Detector(object):
                         keydb = '\'' + key + '\''#目标代号
                         image_info01db = '\'' + '{}×{}'.format(x2-x1, y2-y1) + '\''#图像大小
                         image_info02db =  '\'' + str(np.round(float(conf), 3)) + '\''#置信度
-                        sql = 'INSERT INTO imginfo VALUES(' + keydb + ' ,' + image_info01db + ' ,' + image_info02db + ');'
+                        datatimenow = '\'' + str(datetime.datetime.now().replace(microsecond=0)) + '\''#时间戳
+                        sql = 'INSERT INTO imginfo VALUES(' + keydb + ' ,' + image_info01db + ' ,' + image_info02db + ' ,' + datatimenow + ');'
                         db.moddify(sql)
                         db.close()
 
@@ -125,10 +126,9 @@ class Detector(object):
 
         #每次检测完添加一条时间戳
         db = SQLManager()
-        cut_off_rule01 = '\'' + '监测时间' + '\''
-        cut_off_rule03 = '\'' + '-----' + '\''
+        cut_off_rule = '\'' + '-----' + '\''
         datatimenow = '\'' + str(datetime.datetime.now().replace(microsecond=0)) + '\''
-        sql = 'INSERT INTO imginfo VALUES(' + cut_off_rule01 + ' ,' + datatimenow + ' ,' + cut_off_rule03 + ');'
+        sql = 'INSERT INTO imginfo VALUES(' + cut_off_rule + ' ,' + cut_off_rule + ' ,' + cut_off_rule + ' ,' + cut_off_rule + ');'
         sqlow = 'INSERT INTO testoverview VALUES(' + datatimenow + ' ,' + '\'' + str(count) + '\'' + ');'
         db.moddify(sql)
         db.moddify(sqlow)
