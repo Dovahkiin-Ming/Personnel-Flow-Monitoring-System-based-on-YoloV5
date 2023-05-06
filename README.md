@@ -36,12 +36,7 @@ torch.cuda.is_available() #验证GPU是否已激活，需要是true
 ```
 
 # 1. 效果：
-
-视频链接：
-
-[哔哩哔哩](https://www.bilibili.com/video/BV18g4y137oR/)
-
-展示效果：
+[展示视频](https://www.bilibili.com/video/BV18g4y137oR/)
 
 ![主界面](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/master/main.png)
 
@@ -273,10 +268,7 @@ npm run serve
 set NODE_OPTIONS=--openssl-legacy-provider
 ```
 
-然后在浏览器打开[localhost](http://localhost:8080/)即可：
-
-# 感兴趣的同学关注我的哔哩哔哩：：
-[哔哩哔哩](https://space.bilibili.com/355272176)
+然后在浏览器打开[localhost](https://space.bilibili.com/355272176)即可：
 
 # 本人所用包列表：
 
