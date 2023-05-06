@@ -2,7 +2,7 @@
 
 使用Anaconda来管理Python虚拟环境及包
 
-安装包时一定要注意版本对应关系！！！包列表会在下文列出【-页尾-】
+安装包时一定要注意版本对应关系！！！[包列表](#article_button)会在页尾列出
 
 查看本机GPU信息：
 ```shell
@@ -267,7 +267,7 @@ set NODE_OPTIONS=--openssl-legacy-provider
 
 然后在浏览器打开[localhost](https://space.bilibili.com/355272176)即可：
 
-# 本人所用包列表：
+# 本人所用包列表：<a id="article_button"></a>
 
 ```text
 Python 3.10.6
