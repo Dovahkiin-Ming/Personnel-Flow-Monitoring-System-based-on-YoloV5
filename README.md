@@ -272,6 +272,7 @@ set NODE_OPTIONS=--openssl-legacy-provider
 -V1.0 初始化项目，基础功能构建
 
 -V1.1 修改路径引用方式，支持生成独立部署版本，可大幅度减轻客户机配置压力
+
 前端生成命令
 ```bash
 npm run build #先使用npm构建
