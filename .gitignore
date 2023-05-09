@@ -138,3 +138,7 @@ dmypy.json
 /back-end/weights/b*.pt
 /back-end/weights/c*.pt
 /back-end/weights/*b.pt
+
+# 剔除已生成的独立部署版本
+/standalone-deployment-version/back-end.exe
+/standalone-deployment-version/front_end.exe
