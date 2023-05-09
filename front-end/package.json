@@ -1,7 +1,13 @@
 {
-  "name": "ct",
+  "name": "front_end",
   "version": "0.1.0",
   "private": true,
+  "bin": "./service/service.js",
+  "pkg": {
+      "assets": [
+          "dist/**/*"
+      ]
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
