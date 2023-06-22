@@ -6,7 +6,7 @@
 # 操作数据库【已完成】2023-3-10
 # --增加config.py文件，将对数据库的操作做封装【已完成】2023-3-10
 # 代码优化【正在进行】
-# 最后编译时间 2023-03-13
+# 最后编译时间 2023-05-09
 # 存在问题【暂无】
 
 import datetime
@@ -23,7 +23,17 @@ import core.main
 from config import *
 import math
 
-UPLOAD_FOLDER = r'./uploads'
+#为方便打包，路径引用方式改为自动获取
+import os
+import sys
+PROJECT_DIR = os.path.dirname(__file__)
+if getattr(sys, 'frozen', False):
+    # 如果是 PyInstaller 打包的应用程序，则获取静态文件夹的路径
+    UPLOAD_FOLDER = os.path.join(sys._MEIPASS, "uploads")
+else:
+    # 否则，在开发模式下使用相对路径
+    UPLOAD_FOLDER = r'./uploads'
+
 ALLOWED_EXTENSIONS = set(['png', 'jpg'])
 
 app = Flask(__name__)
@@ -54,7 +64,7 @@ def allowed_file(filename):
 
 @app.route('/')
 def hello_world():
-    return redirect(url_for('static', filename='./index.html'))
+    return redirect(url_for('static', filename='index.html'))
 
 
 @app.route('/upload', methods=['GET', 'POST'])
@@ -64,8 +74,8 @@ def upload_file():
     if file and allowed_file(file.filename):
         src_path = os.path.join(app.config['UPLOAD_FOLDER'], file.filename)
         file.save(src_path)
-        shutil.copy(src_path, './tmp/original')
-        image_path = os.path.join('./tmp/original', file.filename)
+        shutil.copy(src_path, PROJECT_DIR+'/tmp/original')
+        image_path = os.path.join(PROJECT_DIR+'/tmp/original', file.filename)
         pid, image_info = core.main.c_main(
             image_path, current_app.model, file.filename.rsplit('.', 1)[1])
         delete_file(file.filename)#调用删除文件上传缓存接口，避免文件多次存储导致浪费资源
@@ -127,7 +137,7 @@ def convertdata(image_info):
 def show_photo(file):
     if request.method == 'GET':
         if not file is None:
-            image_data = open(f'tmp/{file}', "rb").read()
+            image_data = open(PROJECT_DIR+f'/tmp/{file}', "rb").read()
             response = make_response(image_data)
             response.headers['Content-Type'] = 'image/png'
             return response

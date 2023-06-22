@@ -98,7 +98,7 @@ def detect(self, im):
                         db.close()
 ```
 
-# 4. Flask 部署：
+# 4. 后端部署（开发）：
 
 【[app.py](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/beta/back-end/app.py)】
 
@@ -120,7 +120,7 @@ def testdb():
                     'historical_data': show_data_db})
 ```
 
-# 5. VUE前端：
+# 5. 前端部署（开发）：
 
 【[Content.vue](https://github.com/Dovahkiin-Ming/Personnel-Flow-Monitoring-System-based-on-YoloV5/blob/beta/front-end/src/components/Content.vue)】
 
@@ -267,7 +267,22 @@ set NODE_OPTIONS=--openssl-legacy-provider
 
 然后在浏览器打开[localhost](https://space.bilibili.com/355272176)即可：
 
-# 本人所用包列表：<a id="article_button"></a>
+# 7. 更新纪录：
+
+-V1.0 初始化项目，基础功能构建
+
+-V1.1 修改路径引用方式，支持生成独立部署版本，可大幅度减轻客户机配置压力
+
+前端生成命令
+```bash
+npm run build #先使用npm构建
+pkg -t win package.json #再使用pkg打包
+```
+后端生成命令
+```bash
+pyinstaller app.spec #app.spec文件可以使用pyinstaller -F app.py命令自动生成，主要需要修改datas和hiddenimports字段
+```
+# 8. 本人所用包列表：<a id="article_button"></a>
 
 ```text
 Python 3.10.6

@@ -4,7 +4,7 @@
 # --返回监测数据
 # --数据库操作
 # 代码优化【正在进行】
-# 最后编译时间 2023-03-31
+# 最后编译时间 2023-05-09
 # 存在问题【暂无】
 
 import datetime
@@ -20,6 +20,11 @@ from random import randint
 from config import *
 import math
 
+#为方便打包，路径引用方式改为自动获取
+import os
+PROJECT_DIR = os.path.dirname(__file__)
+WEIGHTS_DIR = os.path.join(PROJECT_DIR,"..\\weights")
+
 class Detector(object):
 
     # 设定检测参数
@@ -31,7 +36,7 @@ class Detector(object):
 
     def init_model(self):
 
-        self.weights = 'weights/model_a.pt'
+        self.weights = WEIGHTS_DIR+'\\'+'model_a.pt'
         # self.weights = 'weights/yolov5s.pt'
         self.device = '0' if torch.cuda.is_available() else 'cpu'
         self.device = select_device(self.device)

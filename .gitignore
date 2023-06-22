@@ -138,3 +138,16 @@ dmypy.json
 /back-end/weights/b*.pt
 /back-end/weights/c*.pt
 /back-end/weights/*b.pt
+
+# 剔除已生成的独立部署版本
+/standalone-deployment-version/back-end.exe
+/standalone-deployment-version/front_end.exe
+
+# 剔除数据集和测试数据
+/training-components/datasets/coco/*.cache
+/training-components/datasets/coco/*.npy
+/training-components/datasets/coco/yo.py
+/training-components/datasets/coco/images
+/training-components/datasets/coco/labels
+/training-components/yolov5/runs
+/training-components/yolov5/test
