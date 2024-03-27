@@ -239,7 +239,27 @@ setImage () {
       },
 ```
 
-# 6. 启动项目：
+# 6. 新建数据库：
+
+表一：详细数据
+```bash
+CREATE TABLE `imginfo` (
+  `目标类型及编号` longtext COMMENT 'object_number',
+  `目标大小` longtext COMMENT 'target_size',
+  `置信度` longtext COMMENT 'confidence_level',
+  `监测时间` longtext COMMENT 'detection_time'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+表二：概览数据
+```bash
+CREATE TABLE `testoverview` (
+  `监测时间` datetime DEFAULT NULL COMMENT 'detection_time',
+  `人流量` varchar(255) DEFAULT NULL COMMENT 'headcount'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+```
+
+# 7. 启动项目：
 
 在 Flask 后端项目下启动后端代码：
 
@@ -267,7 +287,7 @@ set NODE_OPTIONS=--openssl-legacy-provider
 
 然后在浏览器打开[localhost](https://space.bilibili.com/355272176)即可：
 
-# 7. 更新纪录：
+# 8. 更新纪录：
 
 -V1.0 初始化项目，基础功能构建
 
@@ -282,7 +302,7 @@ pkg -t win package.json #再使用pkg打包
 ```bash
 pyinstaller app.spec #app.spec文件可以使用pyinstaller -F app.py命令自动生成，主要需要修改datas和hiddenimports字段
 ```
-# 8. 本人所用包列表：<a id="article_button"></a>
+# 9. 本人所用包列表：<a id="article_button"></a>
 
 ```text
 Python 3.10.6
